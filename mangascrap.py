@@ -48,7 +48,7 @@ driver.close()
 
 # #get each chapter
 # #add chapter index here ex [:4]
-for j in range(0,len(chapterLinkList[1:7])-1):
+for j in range(0,len(chapterLinkList)-1):
     driver = webdriver.Firefox(executable_path = '/home/nearih/python/webScraping/geckodriver')
     print (maintileurl+chapterLinkList[j])
     driver.get(maintileurl+"/"+chapterLinkList[j])
