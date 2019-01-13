@@ -9,11 +9,10 @@ urlpage = 'https://kissmanga.com/Manga/Saenai-Kanojo-no-Sodatekata-Koisuru-Metro
 splitedString = urlpage.split('/')
 seperator = "/"
 title = splitedString[-2]
-maintileurl = 'https://kissmanga.com/Manga/Kingdom'
+maintileurl = "".join(splitedString[:-1])
 mainPath = "./manga"
 mangaPath = mainPath+"/"+title
 chapterPath = mangaPath+"/"+"chapter" 
-maintileurl = 'https://kissmanga.com/Manga/Kingdom'
 #add chapter index line 52
 
 # #create path
