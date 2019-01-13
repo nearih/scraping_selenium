@@ -27,7 +27,7 @@ if not os.path.exists(mangaPath):
 driver = webdriver.Firefox(executable_path = '/home/nearih/python/webScraping/geckodriver')
 driver.get(urlpage)
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
-time.sleep(10)
+time.sleep(9)
 results = driver.find_elements_by_xpath("//*[@id='containerRoot']//*[contains(@style,'width: 95%; text-align: center; margin: auto')]//*[@id='divImage']")
 chapterhtml = driver.find_elements_by_xpath("//*[@id='containerRoot']//*[contains(@style,'width: 95%; text-align: center; margin: auto')]//*[@class='selectChapter']")
 print('Number of results', len(results))
@@ -52,7 +52,7 @@ for j in range(0,len(chapterLinkList)-1):
     print (maintileurl+chapterLinkList[j])
     driver.get(maintileurl+"/"+chapterLinkList[j])
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
-    time.sleep(10)
+    time.sleep(9)
     results = driver.find_elements_by_xpath("//*[@id='containerRoot']//*[contains(@style,'width: 95%; text-align: center; margin: auto')]//*[@id='divImage']")
 
 # # looking for each chapter
@@ -69,7 +69,7 @@ for j in range(0,len(chapterLinkList)-1):
 
     for i in range(0,len(data)-1):
         print(i)
-        chapterPath = mangaPath+"/"+str(j+1)
+        chapterPath = mangaPath+"/"+str(splitedString[-1])
         if not os.path.exists(chapterPath):
             os.makedirs(chapterPath)
         filenamePath = os.path.join(chapterPath,str(i))
