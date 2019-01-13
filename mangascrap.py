@@ -9,7 +9,7 @@ urlpage = 'https://kissmanga.com/Manga/Saenai-Kanojo-no-Sodatekata-Koisuru-Metro
 splitedString = urlpage.split('/')
 seperator = "/"
 title = splitedString[-2]
-maintileurl = "".join(splitedString[:-1])
+maintileurl = "/".join(splitedString[:-1])
 mainPath = "./manga"
 mangaPath = mainPath+"/"+title
 chapterPath = mangaPath+"/"+"chapter" 
@@ -27,7 +27,8 @@ if not os.path.exists(mangaPath):
 driver = webdriver.Firefox(executable_path = '/home/nearih/python/webScraping/geckodriver')
 driver.get(urlpage)
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
-time.sleep(9)
+time.sleep(9
+)
 results = driver.find_elements_by_xpath("//*[@id='containerRoot']//*[contains(@style,'width: 95%; text-align: center; margin: auto')]//*[@id='divImage']")
 chapterhtml = driver.find_elements_by_xpath("//*[@id='containerRoot']//*[contains(@style,'width: 95%; text-align: center; margin: auto')]//*[@class='selectChapter']")
 print('Number of results', len(results))
